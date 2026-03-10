@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vanguard Elite Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Background Music -->
+<audio id="bg-music" loop>
+    <source src="assets/audio/mission-impossible.mp3" type="audio/mpeg">
+</audio>
+<button id="music-btn" onclick="toggleMusic()">Play / Pause Music</button>
+
+<!-- Navigation -->
+<nav>
+    <button onclick="showSection('agent')">AGENT</button>
+    <button onclick="showSection('civilian')">CIVILIAN</button>
+    <button onclick="showSection('service')">SERVICE COVERAGE</button>
+    <button onclick="showSection('helpdesk')">HELP DESK</button>
+    <button onclick="showSection('learn')">LEARN MORE</button>
+    <button onclick="showSection('world')">WORLD</button>
+</nav>
+
+<!-- AGENT -->
+<section id="agent" style="display:none;">
+    <h1>Agent Login</h1>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="agentLogin()">Login</button>
+
+    <div id="agent-dashboard" style="display:none;">
+        <h2>Missions</h2>
+        <ul>
+            <li onclick="playMission('Alpha')">Mission Alpha</li>
+            <li onclick="playMission('Bravo')">Mission Bravo</li>
+            <li onclick="playMission('Charlie')">Mission Charlie</li>
+            <li onclick="playMission('Delta')">Mission Delta</li>
+        </ul>
+        <div id="mission-popup"></div>
+
+        <h2>Radar & Map</h2>
+        <img src="assets/images/radar-map.jpg" alt="Radar Map" class="map-img">
+
+        <h2>Fugitives Around the World</h2>
+        <div class="fugitives">
+            <div class="fugitive" onclick="showFugitive('John Doe')">
+                <img src="assets/images/fugitive1.jpg" alt="John Doe">
+                <p>John Doe, 32, USA</p>
+            </div>
+            <div class="fugitive" onclick="showFugitive('Jane Smith')">
+                <img src="assets/images/fugitive2.jpg" alt="Jane Smith">
+                <p>Jane Smith, 28, UK</p>
+            </div>
+        </div>
+
+        <h2>Classified Folder</h2>
+        <button onclick="openClassified()">Open Classified</button>
+        <div id="classified-popup" class="popup"></div>
+
+        <button onclick="logoutAgent()">Logout</button>
+    </div>
+</section>
+
+<!-- CIVILIAN -->
+<section id="civilian" style="display:none;">
+    <h1>Civilian Officers</h1>
+    <div id="civilian-buttons">
+        <button onclick="showCivilian('China')">China</button>
+        <button onclick="showCivilian('Japan')">Japan</button>
+    </div>
+    <div id="region-popup" class="popup"></div>
+</section>
+
+<!-- SERVICE COVERAGE -->
+<section id="service" style="display:none;">
+    <h1>Service Coverage</h1>
+    <div id="coverage-popup" class="popup"></div>
+</section>
+
+<!-- HELP DESK -->
+<section id="helpdesk" style="display:none;">
+    <h1>Help Desk</h1>
+    <input type="text" id="help-name" placeholder="Your Name">
+    <input type="email" id="help-email" placeholder="Your Email">
+    <textarea id="help-message" placeholder="Your concern"></textarea>
+    <button onclick="submitHelp()">Submit</button>
+</section>
+
+<!-- LEARN MORE -->
+<section id="learn" style="display:none;">
+    <h1>Learn More About Vanguard</h1>
+    <div id="learn-popup" class="popup"></div>
+</section>
+
+<!-- WORLD SECTION -->
+<section id="world" style="display:none;">
+    <h1>World Intelligence</h1>
+    <img src="assets/images/world-map.jpg" class="map-img" alt="World Map">
+    <div>
+        <button onclick="showHighRisk()">High Risk Areas</button>
+        <button onclick="showTerrorists()">Known Terrorists</button>
+        <button onclick="showWanted()">Wanted Persons</button>
+        <div id="world-popup" class="popup"></div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

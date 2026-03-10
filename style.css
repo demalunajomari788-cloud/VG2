@@ -1,0 +1,10 @@
+body{font-family:Arial,sans-serif;background:#0a0a0a;color:#FFD700;margin:0;padding:0;}
+nav{position:sticky;top:0;background:#111;padding:10px;text-align:center;}
+nav button{margin:5px;padding:10px 15px;background:#DAA520;border:none;border-radius:6px;cursor:pointer;}
+section{display:none;padding:20px;text-align:center;}
+.popup{background:rgba(0,0,0,0.95);border:2px solid #FFD700;border-radius:10px;padding:15px;margin-top:10px;display:none;text-align:left;}
+.map-img{max-width:90%;border:2px solid #FFD700;margin:15px 0;}
+.fugitives{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;}
+.fugitive{cursor:pointer;border:1px solid #444;padding:8px;border-radius:6px;}
+input,textarea{width:90%;padding:8px;margin:5px 0;border-radius:6px;border:none;}
+
